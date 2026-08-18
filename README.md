@@ -39,17 +39,6 @@ stt_evaluation_dataset/
 - segment_id와 timestamp는 STT와 Agent 정답 파일 사이에서 동일하게 유지되어야 한다
 - 같은 회의라도 STT 결과가 바뀌면 새 파일로 저장하고 기존 결과는 지우지 않는다 (비교 이력 보존)
 
-## 필드명 규칙 (서경 API 스키마 기준)
-`meeting_XXX_stt.json`은 서경의 `/analyze` API 요청 스키마(`AnalyzeRequest` / `ReviewedTranscriptSegment`)와 필드명을 동일하게 맞춘다.
-- 최상위: `meeting_id`, `reviewed_segments`(배열)
-- 세그먼트별: `segment_id`, `text`, `speaker`, `start_time`, `end_time`, `original_text`, `original_speaker`, `review_status`, `user_edited`
-- ⚠️ `start`/`end`가 아니라 `start_time`/`end_time`으로 통일 (자세한 표는 `scripts/scenario_plan.md` 3번 참고)
-
-`meeting_XXX_agent.json`은 서경의 Agent 응답 스키마가 별도로 공개되면 그에 맞춰 조정 필요. 현재는 `evidence.start_time`/`evidence.end_time`으로만 통일해둔 상태.
-
-### ⚠️ Agent 정답 필드는 "가정된 형식"임 (미확정)
-실제 서경 API 문서(`/openapi.json`)에 공개된 스키마는 `AnalyzeRequest`, `AskRequest`, `DocumentFeedbackRequest`, `FeedbackResponse`, `HTTPValidationError`, `ReviewedTranscriptSegment`, `STTFeedbackRequest`, `ValidationError` 8개뿐이고, **`/analyze`가 실제로 반환하는 응답 스키마(Semantic Document/TO-DO 구조)는 공개돼 있지 않다.**
-
 따라서 `meeting_XXX_agent.json`에 쓰는 `task`, `assignee`, `deadline`, `decision`, `needs_confirmation` 등의 필드명은 서연이 전달받은 예시 문서에서 가져온 **추정 형식**이며, 다음 필드는 **API 스키마에 근거가 없어 제외**한다:
 - `deliverable` — 초기 버전에서 썼으나 실제 스키마에 없어 삭제함
 
