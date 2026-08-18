@@ -1,0 +1,19 @@
+{
+  "id": "meeting_003",
+  "type": "agent_ground_truth",
+  "tasks": [
+    {
+      "task": "명시 안 됨 (\"이것\")",
+      "assignee": null,
+      "deadline": "금요일",
+      "needs_confirmation": true,
+      "evidence": {
+        "segment_id": "seg_001",
+        "start_time": 0.0,
+        "end_time": 3.5
+      }
+    }
+  ],
+  "decisions": [],
+  "notes": "서연이 '급한 대로 진행해볼게요'라고 했으나 이건 자원일 뿐 명확한 담당자 지정은 아님 - assignee를 서연으로 잘못 확정하면 오류"
+}

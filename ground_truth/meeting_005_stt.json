@@ -1,0 +1,82 @@
+{
+  "meeting_id": "meeting_005",
+  "reviewed_segments": [
+    {
+      "segment_id": "seg_001",
+      "text": "서경님이 맡으신 부분 A는 언제까지 가능하실거 같아요?",
+      "speaker": "서연",
+      "start_time": 0.0,
+      "end_time": 3.5,
+      "original_text": "서경님이 맡으신 부분 A는 언제까지 가능하실거 같아요?",
+      "original_speaker": "서연",
+      "review_status": "confirmed",
+      "user_edited": false
+    },
+    {
+      "segment_id": "seg_002",
+      "text": "저 8월 20일이요.",
+      "speaker": "서경",
+      "start_time": 3.8,
+      "end_time": 5.0,
+      "original_text": "저 8월 20일이요.",
+      "original_speaker": "서경",
+      "review_status": "confirmed",
+      "user_edited": false
+    },
+    {
+      "segment_id": "seg_003",
+      "text": "그럼 저 그때부터 iOS 연동 시작하면 되겠네요.",
+      "speaker": "지원",
+      "start_time": 5.3,
+      "end_time": 8.0,
+      "original_text": "그럼 저 그때부터 iOS 연동 시작하면 되겠네요.",
+      "original_speaker": "지원",
+      "review_status": "confirmed",
+      "user_edited": false
+    },
+    {
+      "segment_id": "seg_004",
+      "text": "아 잠깐만요, 테스트 데이터가 더 필요해서요. 22일로 늦춰질 것 같아요.",
+      "speaker": "서경",
+      "start_time": 8.3,
+      "end_time": 13.0,
+      "original_text": "아 잠깐만요, 테스트 데이터가 더 필요해서요. 22일로 늦춰질 것 같아요.",
+      "original_speaker": "서경",
+      "review_status": "confirmed",
+      "user_edited": false
+    },
+    {
+      "segment_id": "seg_005",
+      "text": "알겠습니다, 22일이요.",
+      "speaker": "서연",
+      "start_time": 13.3,
+      "end_time": 15.0,
+      "original_text": "알겠습니다, 22일이요.",
+      "original_speaker": "서연",
+      "review_status": "confirmed",
+      "user_edited": false
+    },
+    {
+      "segment_id": "seg_006",
+      "text": "저는 그럼 22일 이후로 일정 잡을게요.",
+      "speaker": "지원",
+      "start_time": 15.3,
+      "end_time": 18.0,
+      "original_text": "저는 그럼 22일 이후로 일정 잡을게요.",
+      "original_speaker": "지원",
+      "review_status": "confirmed",
+      "user_edited": false
+    },
+    {
+      "segment_id": "seg_007",
+      "text": "네, 그걸로 확정이요.",
+      "speaker": "서경",
+      "start_time": 18.3,
+      "end_time": 19.5,
+      "original_text": "네, 그걸로 확정이요.",
+      "original_speaker": "서경",
+      "review_status": "confirmed",
+      "user_edited": false
+    }
+  ]
+}

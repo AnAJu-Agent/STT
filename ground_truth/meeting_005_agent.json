@@ -1,0 +1,28 @@
+{
+  "id": "meeting_005",
+  "type": "agent_ground_truth",
+  "tasks": [
+    {
+      "task": "서경이 맡은 A",
+      "assignee": "서경",
+      "deadline": "8월 22일",
+      "needs_confirmation": false,
+      "evidence": {
+        "segment_id": "seg_004",
+        "start_time": 8.3,
+        "end_time": 13.0
+      }
+    }
+  ],
+  "decisions": [
+    {
+      "content": "마감일을 8월 20일에서 22일로 변경 확정",
+      "evidence": {
+        "segment_id": "seg_007",
+        "start_time": 18.3,
+        "end_time": 19.5
+      }
+    }
+  ],
+  "notes": "20일이 먼저 언급되었으나 22일로 정정 후 확정됨 - 발언 충돌 테스트 케이스"
+}

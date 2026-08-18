@@ -1,0 +1,49 @@
+{
+  "meeting_id": "meeting_002",
+  "reviewed_segments": [
+    {
+      "segment_id": "seg_001",
+      "text": "문서 정리는 누가 맡을래요?",
+      "speaker": "서경",
+      "start_time": 0.0,
+      "end_time": 2.5,
+      "original_text": "문서 정리는 누가 맡을래요?",
+      "original_speaker": "서경",
+      "review_status": "confirmed",
+      "user_edited": false
+    },
+    {
+      "segment_id": "seg_002",
+      "text": "제가 정리해볼게요.",
+      "speaker": "서연",
+      "start_time": 2.8,
+      "end_time": 4.5,
+      "original_text": "제가 정리해볼게요.",
+      "original_speaker": "서연",
+      "review_status": "confirmed",
+      "user_edited": false
+    },
+    {
+      "segment_id": "seg_003",
+      "text": "그럼 저는 그동안 화면 쪽 준비할게요.",
+      "speaker": "지원",
+      "start_time": 4.8,
+      "end_time": 7.0,
+      "original_text": "그럼 저는 그동안 화면 쪽 준비할게요.",
+      "original_speaker": "지원",
+      "review_status": "confirmed",
+      "user_edited": false
+    },
+    {
+      "segment_id": "seg_004",
+      "text": "좋습니다.",
+      "speaker": "서경",
+      "start_time": 7.3,
+      "end_time": 8.5,
+      "original_text": "좋습니다.",
+      "original_speaker": "서경",
+      "review_status": "confirmed",
+      "user_edited": false
+    }
+  ]
+}

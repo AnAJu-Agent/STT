@@ -1,0 +1,71 @@
+{
+  "meeting_id": "meeting_001",
+  "reviewed_segments": [
+    {
+      "segment_id": "seg_001",
+      "text": "이번 주 발표 자료는 누가 정리할까요?",
+      "speaker": "SPEAKER_01",
+      "start_time": 0.0,
+      "end_time": 3.6,
+      "original_text": "이번 주 발표 자료는 누가 정리할까요?",
+      "original_speaker": "SPEAKER_01",
+      "review_status": "pending",
+      "user_edited": false
+    },
+    {
+      "segment_id": "seg_002",
+      "text": "제가 할게요. 오늘 밤까지 초원 만들어볼게요.",
+      "speaker": "SPEAKER_00",
+      "start_time": 3.6,
+      "end_time": 7.28,
+      "original_text": "제가 할게요. 오늘 밤까지 초원 만들어볼게요.",
+      "original_speaker": "SPEAKER_00",
+      "review_status": "pending",
+      "user_edited": false
+    },
+    {
+      "segment_id": "seg_003",
+      "text": "좋아요. 그럼 내일 오전에 같이 확인하죠.",
+      "speaker": "SPEAKER_00",
+      "start_time": 7.28,
+      "end_time": 11.36,
+      "original_text": "좋아요. 그럼 내일 오전에 같이 확인하죠.",
+      "original_speaker": "SPEAKER_00",
+      "review_status": "pending",
+      "user_edited": false
+    },
+    {
+      "segment_id": "seg_004",
+      "text": "네, 알겠습니다. 오전 몇 시가 좋을까요?",
+      "speaker": "SPEAKER_00",
+      "start_time": 11.36,
+      "end_time": 14.76,
+      "original_text": "네, 알겠습니다. 오전 몇 시가 좋을까요?",
+      "original_speaker": "SPEAKER_00",
+      "review_status": "pending",
+      "user_edited": false
+    },
+    {
+      "segment_id": "seg_005",
+      "text": "오전 10시에 회의하는 것 같아요?",
+      "speaker": "SPEAKER_00",
+      "start_time": 14.76,
+      "end_time": 17.3,
+      "original_text": "오전 10시에 회의하는 것 같아요?",
+      "original_speaker": "SPEAKER_00",
+      "review_status": "pending",
+      "user_edited": false
+    },
+    {
+      "segment_id": "seg_006",
+      "text": "좋습니다. 내일 뵐게요.",
+      "speaker": "SPEAKER_00",
+      "start_time": 17.3,
+      "end_time": 20.3,
+      "original_text": "좋습니다. 내일 뵐게요.",
+      "original_speaker": "SPEAKER_00",
+      "review_status": "pending",
+      "user_edited": false
+    }
+  ]
+}

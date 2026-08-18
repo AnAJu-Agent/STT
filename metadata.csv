@@ -1,0 +1,6 @@
+id,speakers,noise,scenario,language
+meeting_001,3,low,assignee_and_deadline_clear,ko
+meeting_002,3,low,assignee_only,ko
+meeting_003,3,low,deadline_only,ko
+meeting_004,3,low,opinion_vs_decision,ko
+meeting_005,3,low,conflicting_deadline,ko

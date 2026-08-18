@@ -1,0 +1,49 @@
+{
+  "meeting_id": "meeting_002",
+  "reviewed_segments": [
+    {
+      "segment_id": "seg_001",
+      "text": "문서정리는 누가 맡을래요?",
+      "speaker": null,
+      "start_time": 0.0,
+      "end_time": 3.26,
+      "original_text": "문서정리는 누가 맡을래요?",
+      "original_speaker": null,
+      "review_status": "pending",
+      "user_edited": false
+    },
+    {
+      "segment_id": "seg_002",
+      "text": "제가 정리해 볼게요.",
+      "speaker": null,
+      "start_time": 3.26,
+      "end_time": 5.86,
+      "original_text": "제가 정리해 볼게요.",
+      "original_speaker": null,
+      "review_status": "pending",
+      "user_edited": false
+    },
+    {
+      "segment_id": "seg_003",
+      "text": "그럼 저는 그동안 화면 쪽 준비할게요.",
+      "speaker": null,
+      "start_time": 5.86,
+      "end_time": 9.76,
+      "original_text": "그럼 저는 그동안 화면 쪽 준비할게요.",
+      "original_speaker": null,
+      "review_status": "pending",
+      "user_edited": false
+    },
+    {
+      "segment_id": "seg_004",
+      "text": "졌습니다.",
+      "speaker": null,
+      "start_time": 9.76,
+      "end_time": 10.96,
+      "original_text": "졌습니다.",
+      "original_speaker": null,
+      "review_status": "pending",
+      "user_edited": false
+    }
+  ]
+}

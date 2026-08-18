@@ -1,0 +1,27 @@
+{
+  "id": "meeting_001",
+  "type": "agent_ground_truth",
+  "tasks": [
+    {
+      "task": "발표 자료 초안 작성",
+      "assignee": "지원",
+      "deadline": "오늘 밤",
+      "needs_confirmation": false,
+      "evidence": {
+        "segment_id": "seg_002",
+        "start_time": 3.1,
+        "end_time": 6.5
+      }
+    }
+  ],
+  "decisions": [
+    {
+      "content": "발표 자료 확인 회의를 내일 오전 10시에 진행",
+      "evidence": {
+        "segment_id": "seg_006",
+        "start_time": 15.7,
+        "end_time": 17.5
+      }
+    }
+  ]
+}

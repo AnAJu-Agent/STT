@@ -1,0 +1,93 @@
+{
+  "meeting_id": "meeting_005",
+  "reviewed_segments": [
+    {
+      "segment_id": "seg_001",
+      "text": "서경님이 맡으신 부분에 있는 언제까지 가능하실 것 같아요?",
+      "speaker": "SPEAKER_01",
+      "start_time": 0.0,
+      "end_time": 5.14,
+      "original_text": "서경님이 맡으신 부분에 있는 언제까지 가능하실 것 같아요?",
+      "original_speaker": "SPEAKER_01",
+      "review_status": "pending",
+      "user_edited": false
+    },
+    {
+      "segment_id": "seg_002",
+      "text": "저 8월 21일요.",
+      "speaker": "SPEAKER_01",
+      "start_time": 5.14,
+      "end_time": 7.14,
+      "original_text": "저 8월 21일요.",
+      "original_speaker": "SPEAKER_01",
+      "review_status": "pending",
+      "user_edited": false
+    },
+    {
+      "segment_id": "seg_003",
+      "text": "그럼 저 그때부터 IOS 연동 시작하면 되겠네요.",
+      "speaker": "SPEAKER_00",
+      "start_time": 7.14,
+      "end_time": 12.16,
+      "original_text": "그럼 저 그때부터 IOS 연동 시작하면 되겠네요.",
+      "original_speaker": "SPEAKER_00",
+      "review_status": "pending",
+      "user_edited": false
+    },
+    {
+      "segment_id": "seg_004",
+      "text": "아 잠깐만요. 테스트 데이터가 더 필요해서요.",
+      "speaker": "SPEAKER_02",
+      "start_time": 12.16,
+      "end_time": 15.68,
+      "original_text": "아 잠깐만요. 테스트 데이터가 더 필요해서요.",
+      "original_speaker": "SPEAKER_02",
+      "review_status": "pending",
+      "user_edited": false
+    },
+    {
+      "segment_id": "seg_005",
+      "text": "21로 늦혀질 것 같아요.",
+      "speaker": "SPEAKER_02",
+      "start_time": 15.68,
+      "end_time": 18.0,
+      "original_text": "21로 늦혀질 것 같아요.",
+      "original_speaker": "SPEAKER_02",
+      "review_status": "pending",
+      "user_edited": false
+    },
+    {
+      "segment_id": "seg_006",
+      "text": "알겠습니다. 22일요.",
+      "speaker": "SPEAKER_02",
+      "start_time": 18.0,
+      "end_time": 21.4,
+      "original_text": "알겠습니다. 22일요.",
+      "original_speaker": "SPEAKER_02",
+      "review_status": "pending",
+      "user_edited": false
+    },
+    {
+      "segment_id": "seg_007",
+      "text": "저는 그럼 22일 이후로 일정 잡을게요.",
+      "speaker": "SPEAKER_00",
+      "start_time": 21.4,
+      "end_time": 25.36,
+      "original_text": "저는 그럼 22일 이후로 일정 잡을게요.",
+      "original_speaker": "SPEAKER_00",
+      "review_status": "pending",
+      "user_edited": false
+    },
+    {
+      "segment_id": "seg_008",
+      "text": "네, 그걸로 확정이요.",
+      "speaker": "SPEAKER_02",
+      "start_time": 25.36,
+      "end_time": 27.36,
+      "original_text": "네, 그걸로 확정이요.",
+      "original_speaker": "SPEAKER_02",
+      "review_status": "pending",
+      "user_edited": false
+    }
+  ]
+}

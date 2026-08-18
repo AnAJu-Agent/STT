@@ -1,0 +1,19 @@
+{
+  "id": "meeting_004",
+  "type": "agent_ground_truth",
+  "tasks": [
+    {
+      "task": "UI 디자인 시안 2개 제작 (밝은 버전 + 차분한 버전)",
+      "assignee": "지원",
+      "deadline": null,
+      "needs_confirmation": true,
+      "evidence": {
+        "segment_id": "seg_005",
+        "start_time": 13.3,
+        "end_time": 16.5
+      }
+    }
+  ],
+  "decisions": [],
+  "notes": "UI 디자인 '톤' 자체는 미정 (다음 회의에서 결정 예정) - 지원의 개인 의견(차분한 톤 선호)을 최종 결정으로 잘못 추출하면 오류"
+}

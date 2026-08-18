@@ -1,0 +1,49 @@
+{
+  "meeting_id": "meeting_003",
+  "reviewed_segments": [
+    {
+      "segment_id": "seg_001",
+      "text": "이건 이번 주 금요일까지는 끝내야 할 것 같아요.",
+      "speaker": "지원",
+      "start_time": 0.0,
+      "end_time": 3.5,
+      "original_text": "이건 이번 주 금요일까지는 끝내야 할 것 같아요.",
+      "original_speaker": "지원",
+      "review_status": "confirmed",
+      "user_edited": false
+    },
+    {
+      "segment_id": "seg_002",
+      "text": "맞아요, 다음 주 발표 전에 꼭 필요해요.",
+      "speaker": "서경",
+      "start_time": 3.8,
+      "end_time": 6.5,
+      "original_text": "맞아요, 다음 주 발표 전에 꼭 필요해요.",
+      "original_speaker": "서경",
+      "review_status": "confirmed",
+      "user_edited": false
+    },
+    {
+      "segment_id": "seg_003",
+      "text": "그럼 일단 급한 대로 진행해볼게요.",
+      "speaker": "서연",
+      "start_time": 6.8,
+      "end_time": 9.0,
+      "original_text": "그럼 일단 급한 대로 진행해볼게요.",
+      "original_speaker": "서연",
+      "review_status": "confirmed",
+      "user_edited": false
+    },
+    {
+      "segment_id": "seg_004",
+      "text": "좋아요.",
+      "speaker": "지원",
+      "start_time": 9.3,
+      "end_time": 9.8,
+      "original_text": "좋아요.",
+      "original_speaker": "지원",
+      "review_status": "confirmed",
+      "user_edited": false
+    }
+  ]
+}

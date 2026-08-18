@@ -1,0 +1,18 @@
+{
+  "id": "meeting_002",
+  "type": "agent_ground_truth",
+  "tasks": [
+    {
+      "task": "문서 정리",
+      "assignee": "서연",
+      "deadline": null,
+      "needs_confirmation": true,
+      "evidence": {
+        "segment_id": "seg_002",
+        "start_time": 2.8,
+        "end_time": 4.5
+      }
+    }
+  ],
+  "decisions": []
+}

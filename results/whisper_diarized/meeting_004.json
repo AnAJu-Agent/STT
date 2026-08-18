@@ -1,0 +1,82 @@
+{
+  "meeting_id": "meeting_004",
+  "reviewed_segments": [
+    {
+      "segment_id": "seg_001",
+      "text": "이번 유아의 디자인터는 어떻게 갈까요?",
+      "speaker": "SPEAKER_02",
+      "start_time": 0.0,
+      "end_time": 4.06,
+      "original_text": "이번 유아의 디자인터는 어떻게 갈까요?",
+      "original_speaker": "SPEAKER_02",
+      "review_status": "pending",
+      "user_edited": false
+    },
+    {
+      "segment_id": "seg_002",
+      "text": "저는 개인적으로 좀 더 차분한 톤이 나올 것 같아요.",
+      "speaker": "SPEAKER_02",
+      "start_time": 4.06,
+      "end_time": 9.3,
+      "original_text": "저는 개인적으로 좀 더 차분한 톤이 나올 것 같아요.",
+      "original_speaker": "SPEAKER_02",
+      "review_status": "pending",
+      "user_edited": false
+    },
+    {
+      "segment_id": "seg_003",
+      "text": "저는 그것도 괜찮은데 너무 어두우면 잡근성에 안 좋을 수도 있어요.",
+      "speaker": "SPEAKER_02",
+      "start_time": 9.3,
+      "end_time": 16.7,
+      "original_text": "저는 그것도 괜찮은데 너무 어두우면 잡근성에 안 좋을 수도 있어요.",
+      "original_speaker": "SPEAKER_02",
+      "review_status": "pending",
+      "user_edited": false
+    },
+    {
+      "segment_id": "seg_004",
+      "text": "아 그건 생각 못했네요.",
+      "speaker": "SPEAKER_00",
+      "start_time": 16.7,
+      "end_time": 19.54,
+      "original_text": "아 그건 생각 못했네요.",
+      "original_speaker": "SPEAKER_00",
+      "review_status": "pending",
+      "user_edited": false
+    },
+    {
+      "segment_id": "seg_005",
+      "text": "그럼 일단 지원이가 시한 2개 정도 만들어볼래요?",
+      "speaker": "SPEAKER_00",
+      "start_time": 19.54,
+      "end_time": 24.3,
+      "original_text": "그럼 일단 지원이가 시한 2개 정도 만들어볼래요?",
+      "original_speaker": "SPEAKER_00",
+      "review_status": "pending",
+      "user_edited": false
+    },
+    {
+      "segment_id": "seg_006",
+      "text": "네, 밝은 버전이랑 차분한 버전 둘 다 만들어볼게요.",
+      "speaker": "SPEAKER_01",
+      "start_time": 24.3,
+      "end_time": 29.04,
+      "original_text": "네, 밝은 버전이랑 차분한 버전 둘 다 만들어볼게요.",
+      "original_speaker": "SPEAKER_01",
+      "review_status": "pending",
+      "user_edited": false
+    },
+    {
+      "segment_id": "seg_007",
+      "text": "좋아요, 그거 보고 다음 회의 때 정하죠.",
+      "speaker": "SPEAKER_00",
+      "start_time": 29.04,
+      "end_time": 32.64,
+      "original_text": "좋아요, 그거 보고 다음 회의 때 정하죠.",
+      "original_speaker": "SPEAKER_00",
+      "review_status": "pending",
+      "user_edited": false
+    }
+  ]
+}
