@@ -1,0 +1,82 @@
+{
+  "meeting_id": "meeting_005",
+  "reviewed_segments": [
+    {
+      "segment_id": "seg_001",
+      "text": "서경님이 맡으신 부분 a는 언제까지 가능하실 것 같아요?",
+      "speaker": "1",
+      "start_time": 0.0,
+      "end_time": 5.24,
+      "original_text": "서경님이 맡으신 부분 a는 언제까지 가능하실 것 같아요?",
+      "original_speaker": "1",
+      "review_status": "pending",
+      "user_edited": false
+    },
+    {
+      "segment_id": "seg_002",
+      "text": "저 8월 20일이요.",
+      "speaker": "2",
+      "start_time": 5.24,
+      "end_time": 7.29,
+      "original_text": "저 8월 20일이요.",
+      "original_speaker": "2",
+      "review_status": "pending",
+      "user_edited": false
+    },
+    {
+      "segment_id": "seg_003",
+      "text": "그럼 저 그때부터 iOS 연동 시작하면 되겠네요.",
+      "speaker": "3",
+      "start_time": 7.29,
+      "end_time": 12.22,
+      "original_text": "그럼 저 그때부터 iOS 연동 시작하면 되겠네요.",
+      "original_speaker": "3",
+      "review_status": "pending",
+      "user_edited": false
+    },
+    {
+      "segment_id": "seg_004",
+      "text": "아 잠깐만요. 테스트 데이터가 더 필요해서요. 22일로 늦춰질 것 같아요.",
+      "speaker": "2",
+      "start_time": 12.22,
+      "end_time": 18.23,
+      "original_text": "아 잠깐만요. 테스트 데이터가 더 필요해서요. 22일로 늦춰질 것 같아요.",
+      "original_speaker": "2",
+      "review_status": "pending",
+      "user_edited": false
+    },
+    {
+      "segment_id": "seg_005",
+      "text": "알겠습니다. 22일이요.",
+      "speaker": "1",
+      "start_time": 18.23,
+      "end_time": 21.48,
+      "original_text": "알겠습니다. 22일이요.",
+      "original_speaker": "1",
+      "review_status": "pending",
+      "user_edited": false
+    },
+    {
+      "segment_id": "seg_006",
+      "text": "저는 그럼 22일 이후로 일정 잡을게요.",
+      "speaker": "3",
+      "start_time": 21.48,
+      "end_time": 25.0,
+      "original_text": "저는 그럼 22일 이후로 일정 잡을게요.",
+      "original_speaker": "3",
+      "review_status": "pending",
+      "user_edited": false
+    },
+    {
+      "segment_id": "seg_007",
+      "text": "네. 그걸로 확정이요.",
+      "speaker": "2",
+      "start_time": 25.0,
+      "end_time": 27.14,
+      "original_text": "네. 그걸로 확정이요.",
+      "original_speaker": "2",
+      "review_status": "pending",
+      "user_edited": false
+    }
+  ]
+}
