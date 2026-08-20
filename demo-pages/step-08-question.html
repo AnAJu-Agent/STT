@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STEP 8 · 질문 입력</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="phone-frame" aria-label="STEP 8 질문 입력">
+        <header class="status-bar">
+          <span class="time">12:22</span>
+          <div class="status-icons" aria-label="상태 표시">
+            <span class="signal"><i></i><i></i><i></i><i></i></span>
+            <span class="wifi" aria-hidden="true"></span>
+            <span class="battery" aria-hidden="true"
+              ><span class="battery-level"></span
+            ></span>
+          </div>
+        </header>
+
+        <main class="screen question-screen">
+          <div class="question-header-row">
+            <button
+              class="back-icon"
+              type="button"
+              aria-label="뒤로"
+              data-back-target="step-07-edit.html"
+            >
+              ‹
+            </button>
+            <div class="meeting-date">2026. 7. 30. 오후 12:16 녹음</div>
+            <div class="header-actions" aria-label="추가 기능">
+              <span class="mini-icon">◌</span>
+              <span class="mini-menu">⋮</span>
+            </div>
+          </div>
+
+          <div class="question-tab-row" role="tablist" aria-label="요약 탭">
+            <button class="question-tab active" role="tab" aria-selected="true">
+              보드챗
+            </button>
+            <button class="question-tab" role="tab" aria-selected="false">
+              기본 요약
+            </button>
+            <button class="question-tab" role="tab" aria-selected="false">
+              템플릿 요약
+            </button>
+          </div>
+
+          <div class="question-title-wrap">
+            <h1>스크립트 내용을 기반으로<br />대화를 시작해보세요</h1>
+          </div>
+
+          <div class="question-suggestions" aria-label="질문 예시">
+            <button class="suggestion-pill">
+              <span class="suggestion-icon">📄</span>
+              핵심 주제별로 나눠서 정리해줘
+            </button>
+            <button class="suggestion-pill">
+              <span class="suggestion-icon">📝</span>
+              회의록으로 정리해줘
+            </button>
+            <button class="suggestion-pill">
+              <span class="suggestion-icon">📘</span>
+              시험 문제를 만들어줘
+            </button>
+            <button class="suggestion-pill">
+              <span class="suggestion-icon">✅</span>
+              꼭 공부해야 할 내용을 알려줘
+            </button>
+            <button class="suggestion-pill">
+              <span class="suggestion-icon">🌐</span>
+              주요 내용을 한글로 번역해줘
+            </button>
+          </div>
+
+          <div class="question-compose">
+            <input
+              type="text"
+              placeholder="궁금한 내용을 질문해보세요"
+              aria-label="질문 입력"
+            />
+            <button class="send-btn" aria-label="전송">↑</button>
+          </div>
+
+          <div class="slide-actions">
+            <a class="slide-nav-btn secondary" href="step-07-edit.html">이전</a>
+            <a class="slide-nav-btn primary" href="step-09-audio.html">다음</a>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="../script.js"></script>
+  </body>
+</html>

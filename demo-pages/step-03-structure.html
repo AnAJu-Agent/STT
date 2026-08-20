@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STEP 3 · Semantic Structure</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="show-bottom-nav">
+    <div class="page-shell">
+      <div class="phone-frame" aria-label="STEP 3 Semantic Structure 결과 화면">
+        <header class="status-bar">
+          <span class="time">12:22</span>
+          <div class="status-icons" aria-label="상태 표시">
+            <span class="signal"><i></i><i></i><i></i><i></i></span>
+            <span class="wifi" aria-hidden="true"></span>
+            <span class="battery" aria-hidden="true"
+              ><span class="battery-level"></span
+            ></span>
+          </div>
+        </header>
+
+        <main class="screen">
+          <div class="screen-header">
+            <span class="screen-tag">STEP 3</span>
+            <h1>Semantic Structure 결과 화면</h1>
+          </div>
+          <div class="hierarchy-box">
+            <div class="h1-box">
+              H1 · 대제목 · 음성 회의 기록을 체계적으로 정리하는 프로젝트 개발
+            </div>
+            <div class="h2-box">
+              H2 · 중제목 · 회의 내용을 빠짐없이 분석하고 팀의 역할과 진행
+              상황을 한눈에 확인하기
+            </div>
+            <div class="h3-box">
+              H3 · 소제목 · STT 변환 결과를 검토해 핵심 논의와 다음 실행 과제를
+              정확하게 구조화하기
+            </div>
+          </div>
+          <div class="slide-actions show-bottom-nav-only-next">
+            <button
+              class="slide-nav-btn primary"
+              type="button"
+              data-target="step-04-major.html"
+            >
+              다음
+            </button>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="../script.js"></script>
+  </body>
+</html>
