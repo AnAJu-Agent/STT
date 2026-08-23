@@ -25,12 +25,14 @@
             <span class="screen-tag">사용자 수정</span>
             <h1>사용자 수정</h1>
           </div>
-          <textarea aria-label="사용자 수정 입력">
-지원이 회의록 구조화 Agent를 구현하고, 접근성 화면 연결까지 포함하는 것으로 수정합니다.</textarea
-          >
-          <button class="primary-btn large-btn full-width">
-            수정 사항 반영
-          </button>
+          <form data-feedback-form class="edit-form">
+            <label>담당자<input name="assignee" value="지원" /></label>
+            <label>마감일<input name="deadline" value="오늘 밤" /></label>
+            <button class="primary-btn large-btn full-width" type="submit">
+              수정 사항 반영
+            </button>
+            <p data-feedback-status role="status"></p>
+          </form>
           <div class="slide-actions">
             <button
               class="slide-nav-btn secondary"

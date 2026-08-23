@@ -27,8 +27,14 @@
           </div>
           <div class="audio-panel">
             <div class="audio-head">
-              <span>00:12 ~ 00:24</span>
-              <button class="play-btn" aria-label="재생 버튼">▶</button>
+              <span data-audio-status>근거 구간을 선택하세요</span>
+              <button
+                class="play-btn"
+                aria-label="재생 버튼"
+                data-evidence-id="seg_002"
+              >
+                ▶
+              </button>
             </div>
             <div class="waveform" aria-hidden="true">
               <span></span><span></span><span></span><span></span><span></span
@@ -37,9 +43,14 @@
               ><span></span>
             </div>
           </div>
+          <audio
+            controls
+            preload="metadata"
+            src="../audio/meeting_001.m4a"
+          ></audio>
           <div class="slide-actions">
             <a class="slide-nav-btn secondary" href="step-08-question.html"
-              >이전</a
+              >질문으로</a
             >
             <a class="slide-nav-btn primary" href="step-01-upload.html"
               >처음으로</a

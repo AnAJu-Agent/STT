@@ -26,8 +26,23 @@
             <h1>회의 데이터 업로드 또는 샘플 선택</h1>
           </div>
           <div class="upload-box">
-            <button class="primary-btn large-btn">업로드</button>
-            <button class="secondary-btn large-btn">샘플 선택</button>
+            <label class="secondary-btn large-btn file-picker"
+              >STT JSON 업로드<input type="file" accept=".json"
+            /></label>
+            <div class="sample-list" aria-label="샘플 회의 선택">
+              <button
+                class="secondary-btn large-btn"
+                data-meeting="meeting_001"
+              >
+                meeting_001 · 담당자와 마감일
+              </button>
+              <button
+                class="secondary-btn large-btn"
+                data-meeting="meeting_005"
+              >
+                meeting_005 · 마감일 충돌
+              </button>
+            </div>
           </div>
           <div class="slide-actions">
             <a
