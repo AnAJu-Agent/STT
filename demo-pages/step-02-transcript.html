@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>STT·화자 검토</title>
+    <title>화자 및 회의 내용 확인</title>
     <link rel="stylesheet" href="../styles.css" />
   </head>
   <body>
     <div class="page-shell">
-      <div class="phone-frame" aria-label="STT 화자 검토 화면">
+      <div class="phone-frame" aria-label="화자 및 회의 내용 확인 화면">
         <header class="status-bar">
           <span class="time">12:22</span>
           <div class="status-icons" aria-label="상태 표시">
@@ -22,20 +22,82 @@
 
         <main class="screen">
           <div class="screen-header">
-            <span class="screen-tag">STT·화자 검토</span>
-            <h1>STT·화자 검토 화면</h1>
+            <h1>화자 및 회의 내용 확인</h1>
+          </div>
+          <section
+            class="speaker-review-panel"
+            aria-labelledby="speaker-review-title"
+          >
+            <div class="review-section-heading">
+              <strong id="speaker-review-title">회의 참가자</strong>
+              <span>화자 이름을 연결해주세요</span>
+            </div>
+            <div class="participant-chips" aria-label="회의 참가자">
+              <span class="participant-chip">서연</span>
+              <span class="participant-chip">지원</span>
+              <span class="participant-chip">서경</span>
+            </div>
+            <div class="review-section-heading mapping-heading">
+              <strong>화자 매핑</strong>
+              <span>녹음 속 화자와 이름을 연결</span>
+            </div>
+            <div class="speaker-mapping-list">
+              <label class="speaker-mapping-row">
+                <span>화자 1</span>
+                <select data-speaker="SPEAKER_01" aria-label="화자 1 이름 선택">
+                  <option>서연</option>
+                  <option>지원</option>
+                  <option>서경</option>
+                </select>
+              </label>
+              <label class="speaker-mapping-row">
+                <span>화자 2</span>
+                <select data-speaker="SPEAKER_00" aria-label="화자 2 이름 선택">
+                  <option>지원</option>
+                  <option>서연</option>
+                  <option>서경</option>
+                </select>
+              </label>
+              <label class="speaker-mapping-row">
+                <span>화자 3</span>
+                <select data-speaker="SPEAKER_02" aria-label="화자 3 이름 선택">
+                  <option>서경</option>
+                  <option>서연</option>
+                  <option>지원</option>
+                </select>
+              </label>
+            </div>
+            <button
+              class="apply-speakers-btn"
+              type="button"
+              data-apply-speakers
+            >
+              전체 발화에 적용
+            </button>
+          </section>
+          <div class="review-content-heading">
+            <strong>회의 내용 확인</strong>
+            <span>총 3명의 화자</span>
           </div>
           <div class="transcript-box">
-            <div class="speaker-tag">화자 A</div>
+            <div class="speaker-tag" data-transcript-speaker="SPEAKER_01">
+              화자 1
+            </div>
             <p>
               이번 회의에서는 Whisper를 우선 적용하고, 정확도 비교를 이어서
               검증하기로 했습니다.
             </p>
-            <div class="speaker-tag">화자 B</div>
+            <div class="speaker-tag" data-transcript-speaker="SPEAKER_00">
+              화자 2
+            </div>
             <p>
               지원이 구조화 Agent를 구현하고, 서경은 테스트와 검증을 맡기로
               했어요.
             </p>
+            <div class="speaker-tag" data-transcript-speaker="SPEAKER_02">
+              화자 3
+            </div>
+            <p>좋아요. 내일 오전에 같이 확인하죠.</p>
           </div>
           <div class="slide-actions show-bottom-nav-only-next">
             <button
@@ -43,12 +105,12 @@
               type="button"
               data-target="step-03-structure.html"
             >
-              다음
+              검토 완료 후 분석하기
             </button>
           </div>
         </main>
       </div>
     </div>
-    <script src="../script.js"></script>
+    <script src="../script.js?v=nav-labels-1"></script>
   </body>
 </html>

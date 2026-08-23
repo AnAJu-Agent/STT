@@ -61,6 +61,16 @@ const fallbackTranscript = {
 
 const fallbackDocument = {
   id: DEMO_MEETING,
+  hierarchy: [
+    {
+      title: "내 할 일",
+      subtopics: ["해야 할 일", "확인이 필요한 일", "완료한 일"],
+    },
+    { title: "마감일", subtopics: ["임박한 마감일", "마감일 미정"] },
+    { title: "역할 분배", subtopics: ["팀원별 역할", "담당자 미정"] },
+    { title: "결정된 내용", subtopics: ["확정된 결정"] },
+    { title: "논의 중인 내용", subtopics: ["추가 논의 필요"] },
+  ],
   tasks: [
     {
       task: "발표 자료 초안 작성",
@@ -87,6 +97,114 @@ const fallbackDocument = {
 
 function persistState() {
   localStorage.setItem("stt-demo-state", JSON.stringify(state));
+}
+
+function getItemText(item, fallback) {
+  if (typeof item === "string") return item;
+  return (
+    item?.title ||
+    item?.name ||
+    item?.label ||
+    item?.text ||
+    item?.content ||
+    fallback
+  );
+}
+
+function getChildren(item) {
+  return (
+    item?.subtopics ||
+    item?.children ||
+    item?.minor_topics ||
+    item?.minorTopics ||
+    []
+  );
+}
+
+function getHierarchy() {
+  const source =
+    state.document?.hierarchy ||
+    state.document?.semantic_structure ||
+    state.document?.structure;
+  const majorItems = Array.isArray(source)
+    ? source
+    : source?.major_topics ||
+      source?.majorTopics ||
+      state.document?.topics ||
+      state.document?.major_topics ||
+      fallbackDocument.hierarchy;
+  return majorItems.map((major, majorIndex) => ({
+    title: getItemText(major, `대주제 ${majorIndex + 1}`),
+    subtopics: getChildren(major).map((minor, minorIndex) =>
+      getItemText(minor, `중주제 ${minorIndex + 1}`),
+    ),
+    raw: major,
+  }));
+}
+
+function renderHierarchy() {
+  const hierarchy = getHierarchy();
+  const hierarchyList = document.querySelector("[data-hierarchy-list]");
+  if (hierarchyList) {
+    hierarchyList.replaceChildren();
+    hierarchy.forEach((major, index) => {
+      const majorBox = document.createElement("div");
+      majorBox.className = "h1-box";
+      majorBox.textContent = `H1 · 대주제 · ${major.title}`;
+      const minorBox = document.createElement("div");
+      minorBox.className = "h2-box";
+      minorBox.textContent = `H2 · 중주제 · ${major.subtopics.join(", ") || "하위 주제 없음"}`;
+      hierarchyList.append(majorBox, minorBox);
+      if (index === 0 && major.subtopics[0]) {
+        const detailBox = document.createElement("div");
+        detailBox.className = "h3-box";
+        detailBox.textContent = `H3 · 소주제 · ${major.subtopics[0]}`;
+        hierarchyList.append(detailBox);
+      }
+    });
+  }
+
+  const majorList = document.querySelector("[data-major-topic-list]");
+  if (majorList) {
+    majorList.replaceChildren();
+    hierarchy.forEach((major) => {
+      const button = document.createElement("button");
+      button.className = "topic-btn";
+      button.type = "button";
+      button.dataset.majorTopic = major.title;
+      button.textContent = major.title;
+      button.classList.toggle("active", major.title === state.majorTopic);
+      button.addEventListener("click", () => {
+        state.majorTopic = major.title;
+        state.minorTopic = major.subtopics[0] || "";
+        persistState();
+        window.location.href = "step-05-minor.html";
+      });
+      majorList.append(button);
+    });
+  }
+
+  const minorList = document.querySelector("[data-minor-topic-list]");
+  if (minorList) {
+    const selectedMajor =
+      hierarchy.find((major) => major.title === state.majorTopic) ||
+      hierarchy[0];
+    minorList.replaceChildren();
+    (selectedMajor?.subtopics || []).forEach((minor) => {
+      const button = document.createElement("button");
+      button.className = "subtopic-btn";
+      button.type = "button";
+      button.dataset.minorTopic = minor;
+      button.textContent = minor;
+      button.classList.toggle("active", minor === state.minorTopic);
+      button.addEventListener("click", () => {
+        state.minorTopic = minor;
+        persistState();
+        window.location.href = "step-06-detail.html";
+      });
+      minorList.append(button);
+    });
+  }
 }
 
 async function loadMeetingData() {
@@ -155,10 +273,10 @@ function playEvidence(segmentId) {
 function renderDataDrivenPage() {
   const audio = document.querySelector("audio");
   if (audio) audio.src = `../audio/${state.meetingId}.m4a`;
+  renderHierarchy();
   const task = state.document?.tasks?.[0];
   const hierarchyTitle = document.querySelector("[data-hierarchy-title]");
-  if (hierarchyTitle)
-    hierarchyTitle.textContent = `${state.majorTopic} · ${state.minorTopic}`;
+  if (hierarchyTitle) hierarchyTitle.textContent = "소주제";
   const detailCards = document.querySelectorAll("[data-detail-topic]");
   if (detailCards.length) {
     let visibleCardCount = 0;
@@ -328,6 +446,26 @@ if (fileInput) {
   });
 }
 
+const speakerSelects = document.querySelectorAll("[data-speaker]");
+const transcriptSpeakerLabels = document.querySelectorAll(
+  "[data-transcript-speaker]",
+);
+function applySpeakerMappings() {
+  speakerSelects.forEach((select) => {
+    transcriptSpeakerLabels.forEach((label) => {
+      if (label.dataset.transcriptSpeaker === select.dataset.speaker) {
+        label.textContent = select.value;
+      }
+    });
+  });
+}
+document
+  .querySelector("[data-apply-speakers]")
+  ?.addEventListener("click", (event) => {
+    event.stopImmediatePropagation();
+    applySpeakerMappings();
+  });
+
 const questionInput = document.querySelector(".question-compose input");
 const answerBox = document.querySelector("[data-answer]");
 if (questionInput && answerBox) {
@@ -364,7 +502,20 @@ const currentIndex = pageOrder.indexOf(currentPage);
 
 const phoneFrame = document.querySelector(".phone-frame");
 if (phoneFrame && currentIndex > 0) {
+  phoneFrame.classList.add("has-back-nav");
   const prevPage = pageOrder[currentIndex - 1];
+  const pageLabels = {
+    "step-01-upload.html": "업로드",
+    "step-02-transcript.html": "회의 내용 검토",
+    "step-03-structure.html": "Semantic Structure",
+    "step-04-major.html": "대주제",
+    "step-05-minor.html": "중주제",
+    "step-06-detail.html": "소주제 상세",
+    "step-07-edit.html": "사용자 수정",
+    "step-08-question.html": "질문 입력",
+  };
+  const backNav = document.createElement("div");
+  backNav.className = "back-nav-wrap";
   const backButton = document.createElement("button");
   backButton.type = "button";
   backButton.className = "back-nav-btn";
@@ -373,8 +524,12 @@ if (phoneFrame && currentIndex > 0) {
   backButton.addEventListener("click", () => {
     window.location.href = prevPage;
   });
+  const pageLabel = document.createElement("span");
+  pageLabel.className = "back-nav-label";
+  pageLabel.textContent = pageLabels[currentPage] || "현재 화면";
+  backNav.append(backButton, pageLabel);
 
-  phoneFrame.insertBefore(backButton, phoneFrame.firstChild);
+  phoneFrame.insertBefore(backNav, phoneFrame.firstChild);
 }
 
 const explicitNavButtons = document.querySelectorAll("[data-target]");
@@ -411,6 +566,8 @@ if (currentIndex >= 0 && currentIndex < pageOrder.length - 1) {
       button.classList.contains("question-tab") ||
       button.hasAttribute("data-evidence-id") ||
       button.hasAttribute("data-meeting") ||
+      button.hasAttribute("data-apply-speakers") ||
+      button.classList.contains("apply-speakers-btn") ||
       button.type === "submit"
     ) {
       return;

@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>중주제 버튼</title>
+    <title>중주제</title>
     <link rel="stylesheet" href="../styles.css" />
   </head>
   <body>
     <div class="page-shell">
-      <div class="phone-frame" aria-label="중주제 버튼">
+      <div class="phone-frame" aria-label="중주제">
         <header class="status-bar">
           <span class="time">12:22</span>
           <div class="status-icons" aria-label="상태 표시">
@@ -22,32 +22,9 @@
 
         <main class="screen">
           <div class="screen-header">
-            <span class="screen-tag">중주제</span>
-            <h1>중주제 버튼</h1>
+            <h1>중주제</h1>
           </div>
-          <div class="topic-grid small-grid">
-            <button
-              class="subtopic-btn active"
-              type="button"
-              data-minor-topic="해야 할 일"
-            >
-              해야 할 일
-            </button>
-            <button
-              class="subtopic-btn"
-              type="button"
-              data-minor-topic="확인이 필요한 일"
-            >
-              확인이 필요한 일
-            </button>
-            <button
-              class="subtopic-btn"
-              type="button"
-              data-minor-topic="완료한 일"
-            >
-              완료한 일
-            </button>
-          </div>
+          <div class="topic-grid small-grid" data-minor-topic-list></div>
           <div class="slide-actions">
             <a class="slide-nav-btn secondary" href="step-04-major.html"
               >이전</a
@@ -57,6 +34,6 @@
         </main>
       </div>
     </div>
-    <script src="../script.js"></script>
+    <script src="../script.js?v=nav-labels-1"></script>
   </body>
 </html>
