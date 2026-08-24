@@ -303,7 +303,7 @@ function renderHierarchy() {
   const hierarchyList = document.querySelector("[data-hierarchy-list]");
   if (hierarchyList) {
     hierarchyList.replaceChildren();
-    hierarchy.forEach((major, index) => {
+    hierarchy.forEach((major) => {
       const h1 = document.createElement("div");
       h1.className = "h1-box";
       h1.textContent = `H1 · 대주제 · ${major.title}`;
@@ -314,13 +314,13 @@ function renderHierarchy() {
         h2.className = "h2-box";
         h2.textContent = `H2 · 중주제 · ${major.subtopics.join(", ")}`;
         hierarchyList.append(h2);
-      }
 
-      if (index === 0 && major.subtopics[0]) {
-        const h3 = document.createElement("div");
-        h3.className = "h3-box";
-        h3.textContent = `H3 · 소주제 · ${major.subtopics[0]}`;
-        hierarchyList.append(h3);
+        major.subtopics.forEach((subtopic) => {
+          const h3 = document.createElement("div");
+          h3.className = "h3-box";
+          h3.textContent = `H3 · 소주제 · ${subtopic}`;
+          hierarchyList.append(h3);
+        });
       }
     });
   }
