@@ -447,32 +447,65 @@ function renderDataDrivenPage() {
   const hierarchyTitle = document.querySelector("[data-hierarchy-title]");
   if (hierarchyTitle) hierarchyTitle.textContent = state.minorTopic || "소주제";
 
-  const detailCards = document.querySelectorAll("[data-detail-topic]");
-  if (detailCards.length) {
-    let visibleCount = 0;
-    detailCards.forEach((card) => {
-      const isSelected = card.dataset.detailTopic === state.minorTopic;
-      card.hidden = !isSelected;
-      if (isSelected) visibleCount++;
-    });
-    if (visibleCount === 0) {
-      const detailList = document.querySelector(".detail-list");
-      if (detailList) {
-        const empty = document.createElement("p");
-        empty.className = "detail-empty";
-        empty.textContent = `${state.minorTopic}에 해당하는 항목이 없습니다.`;
-        detailList.append(empty);
-      }
-    }
-  }
+  // 소주제 상세 카드: step-06은 고정된 2개 카드만 갖고 있었어서 실제 API가 내려주는
+  // 소주제(H3, getHierarchy()의 minorDetails)와 무관하게 항상 같은 카드만 보였다.
+  // 선택된 중주제의 진짜 소주제 목록으로 매번 새로 그린다.
+  const detailList = document.querySelector(".detail-list");
+  if (detailList) {
+    const hierarchy = getHierarchy();
+    const selectedMajor =
+      hierarchy.find((m) => m.title === state.majorTopic) || hierarchy[0];
+    const minorIndex = selectedMajor?.subtopics.indexOf(state.minorTopic) ?? -1;
+    const details = minorIndex >= 0 ? selectedMajor.minorDetails[minorIndex] : [];
 
-  if (task) {
-    const taskTitle = document.querySelector("[data-task-title]");
-    if (taskTitle) taskTitle.textContent = task.task;
-    const assignee = document.querySelector("[data-assignee]");
-    if (assignee) assignee.textContent = `담당자: ${task.assignee}`;
-    const deadline = document.querySelector("[data-deadline]");
-    if (deadline) deadline.textContent = `마감: ${task.deadline}`;
+    detailList.replaceChildren();
+    if (!details.length) {
+      const empty = document.createElement("p");
+      empty.className = "detail-empty";
+      empty.textContent = `${state.minorTopic}에 해당하는 항목이 없습니다.`;
+      detailList.append(empty);
+    } else {
+      details.forEach((detail, idx) => {
+        // task 배열엔 소주제와의 연결 필드가 없어서, 텍스트가 그대로 일치할 때만 담당자/마감 정보를 붙인다.
+        const matchedTask = task && detail === task.task ? task : null;
+
+        const card = document.createElement("article");
+        card.className = idx === 0 ? "detail-card main" : "detail-card";
+        card.dataset.detailTopic = state.minorTopic;
+
+        const meta = document.createElement("div");
+        meta.className = "detail-meta";
+        const pill = document.createElement("span");
+        pill.className = `label-pill ${idx === 0 ? "violet" : "gray"}`;
+        pill.textContent = state.minorTopic;
+        meta.append(pill);
+        if (matchedTask) {
+          const assignee = document.createElement("span");
+          assignee.textContent = `담당자: ${matchedTask.assignee}`;
+          meta.append(assignee);
+        }
+        card.append(meta);
+
+        const h3 = document.createElement("h3");
+        h3.textContent = detail;
+        card.append(h3);
+
+        if (matchedTask) {
+          const footer = document.createElement("div");
+          footer.className = "detail-footer";
+          const deadline = document.createElement("span");
+          deadline.textContent = `마감: ${matchedTask.deadline}`;
+          footer.append(deadline);
+          const status = document.createElement("span");
+          status.className = "status-text";
+          status.textContent = matchedTask.status || "진행 중";
+          footer.append(status);
+          card.append(footer);
+        }
+
+        detailList.append(card);
+      });
+    }
   }
 
   // 근거 버튼 이벤트
