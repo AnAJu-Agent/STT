@@ -32,12 +32,38 @@ const fallbackTranscript = {
 
 const fallbackDocument = {
   id: DEMO_MEETING,
+  // H1(대주제) > H2(중주제) > H3(소주제, 리프) 3단계 구조.
+  // 실제 /api/analyze 응답도 이 구조(level 1~3, H3는 children: [])를 따른다.
   hierarchy: [
-    { title: "내 할 일", subtopics: ["해야 할 일", "확인이 필요한 일", "완료한 일"] },
-    { title: "마감일", subtopics: ["임박한 마감일", "마감일 미정"] },
-    { title: "역할 분배", subtopics: ["팀원별 역할", "담당자 미정"] },
-    { title: "결정된 내용", subtopics: ["확정된 결정"] },
-    { title: "논의 중인 내용", subtopics: ["추가 논의 필요"] },
+    {
+      title: "내 할 일", subtopics: [
+        { title: "해야 할 일", children: ["발표 자료 초안 작성"] },
+        { title: "확인이 필요한 일", children: ["발표 자료 리뷰"] },
+        { title: "완료한 일", children: [] },
+      ]
+    },
+    {
+      title: "마감일", subtopics: [
+        { title: "임박한 마감일", children: ["발표 자료 초안 - 오늘 밤"] },
+        { title: "마감일 미정", children: [] },
+      ]
+    },
+    {
+      title: "역할 분배", subtopics: [
+        { title: "팀원별 역할", children: ["지원 - 발표 자료 초안 작성"] },
+        { title: "담당자 미정", children: [] },
+      ]
+    },
+    {
+      title: "결정된 내용", subtopics: [
+        { title: "확정된 결정", children: ["발표 자료 확인 회의를 내일 오전 10시에 진행"] },
+      ]
+    },
+    {
+      title: "논의 중인 내용", subtopics: [
+        { title: "추가 논의 필요", children: ["발표 자료를 누가 정리할지 논의"] },
+      ]
+    },
   ],
   tasks: [{
     task: "발표 자료 초안 작성", assignee: "지원", deadline: "오늘 밤",
@@ -286,13 +312,23 @@ function getHierarchy() {
     state.document?.topics ||
     state.document?.major_topics ||
     fallbackDocument.hierarchy;
-  return majorItems.map((major, i) => ({
-    title: getItemText(major, `대주제 ${i + 1}`),
-    subtopics: getChildren(major).map((minor, j) =>
-      getItemText(minor, `중주제 ${j + 1}`)
-    ),
-    raw: major,
-  }));
+  return majorItems.map((major, i) => {
+    const minorNodes = getChildren(major);
+    return {
+      title: getItemText(major, `대주제 ${i + 1}`),
+      subtopics: minorNodes.map((minor, j) =>
+        getItemText(minor, `중주제 ${j + 1}`)
+      ),
+      // H2(중주제) 노드별로 실제 API가 내려준 H3(소주제) 리프 노드를 보존한다.
+      // subtopics는 문자열 배열이라 여기서 매핑을 잃어버리므로 별도로 들고 있는다.
+      minorDetails: minorNodes.map((minor, j) =>
+        getChildren(minor).map((detail, k) =>
+          getItemText(detail, `소주제 ${k + 1}`)
+        )
+      ),
+      raw: major,
+    };
+  });
 }
 
 // ─── 13. H1/H2/H3 렌더링 ────────────────────────────────────────────────────
@@ -315,10 +351,10 @@ function renderHierarchy() {
         h2.textContent = `H2 · 중주제 · ${major.subtopics.join(", ")}`;
         hierarchyList.append(h2);
 
-        major.subtopics.forEach((subtopic) => {
+        major.minorDetails.flat().forEach((detail) => {
           const h3 = document.createElement("div");
           h3.className = "h3-box";
-          h3.textContent = `H3 · 소주제 · ${subtopic}`;
+          h3.textContent = `H3 · 소주제 · ${detail}`;
           hierarchyList.append(h3);
         });
       }
